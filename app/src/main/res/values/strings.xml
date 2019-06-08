@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Copa_America</string>
+    <string name="app_name">Copa America 2019</string>
     <!--Strings for button navbar-->
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
