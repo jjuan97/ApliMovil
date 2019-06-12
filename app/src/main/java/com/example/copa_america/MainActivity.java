@@ -28,31 +28,27 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view2);
-        mTextMessage = findViewById(R.id.message);
+        //declaracion bottonNavView
+        BottomNavigationView navView = findViewById(R.id.bot_nav_view);
+        mTextMessage = findViewById(R.id.message);  //muestra el mensaje para mostrar en que buttonNavView y navBar se encuentra
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        //proceso tabLayout para adicionar los fragments
+        //proceso de inflacion de tabLayout, view page para fragments y creacion objeto adapterFragment
         tabLayout = (TabLayout) findViewById(R.id.tabLayout_id);
         viewPagerFragment = (ViewPager) findViewById(R.id.viewPagerFragments_id);
-        ViewPagerFragmentAdapter adapter = new ViewPagerFragmentAdapter(getSupportFragmentManager());
-        //creado el objeto ViewPagerFragmentAdapter procedemos a adicionar fragments con la funcion de la clase ViewPagerFragmentAdapter
-        adapter.AddFragment(new FragmentGrupos(), "Grupos");
-        adapter.AddFragment(new FragmentEliminatorias(), "Eliminatorias");
-        //configuracion adapter
-        viewPagerFragment.setAdapter(adapter);
+        ViewPagerFragmentAdapter adapterFragment = new ViewPagerFragmentAdapter(getSupportFragmentManager());
+        //creado el objeto ViewPagerFragmentAdapter procedemos a adicionar fragments con la funcion addFragment de la clase ViewPagerFragmentAdapter
+        adapterFragment.addFragment(new FragmentGrupos(), "Grupos");
+        adapterFragment.addFragment(new FragmentEliminatorias(), "Eliminatorias");
+        //configuracion adapterFragment al content_main(xml)
+        viewPagerFragment.setAdapter(adapterFragment);
         tabLayout.setupWithViewPager(viewPagerFragment);
 
+        //inflacion toolbar y habilitacion para este activity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+
+        //configuracion de el DrawerLayout colocando la barra de navegacion lateral NavView
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -62,23 +58,14 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
+    /*   crea una opcion de un actionSelection en el toolbar, se puede utilizar para añadir equipos favoritos
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main2, menu);
         return true;
-    }
-
+    }*/
+    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -92,8 +79,10 @@ public class MainActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
+
+    //escuchar que boton del navBar fue presionado para generar la accion
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -119,6 +108,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    //escuchar que boton del botNavBar fue presionando para generar la accion
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -138,5 +128,15 @@ public class MainActivity extends AppCompatActivity
             return false;
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();   //si crea conflicto con otros layouts agregar finish();
+        }
+    }
 
 }
