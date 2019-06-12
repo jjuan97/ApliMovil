@@ -26,4 +26,6 @@
     <string name="item_date">DD/MM/AA</string>
     <string name="item_score"># - #</string>
     <string name="item_group">grupo A</string>
+    <string name="conten_description_team1">Equipo 1</string>
+    <string name="conten_description_team2">Equipo 2</string>
 </resources>

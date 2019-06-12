@@ -16,6 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@mipmap/colombia"
+            android:contentDescription="@string/conten_description_team1"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="15"/>
@@ -31,27 +32,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_bold"
                 android:gravity="center"
                 android:text="@string/item_date"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
+
             <TextView
                 android:id="@+id/text_score"
                 android:layout_width="match_parent"
-                android:gravity="center"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/allerta_stencil"
+                android:gravity="center"
                 android:text="@string/item_score"
-                android:textSize="28sp"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/colorBlack"
+                android:textSize="28sp" />
+
             <TextView
                 android:id="@+id/text_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto_bold"
                 android:gravity="center"
                 android:text="@string/item_group"
-                android:textSize="10sp"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -60,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@mipmap/argentina"
+            android:contentDescription="@string/conten_description_team2"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="15"/>
