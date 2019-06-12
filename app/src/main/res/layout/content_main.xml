@@ -25,7 +25,7 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         app:tabMaxWidth="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -35,17 +35,18 @@
         app:tabBackground="@color/colorPrimaryLight"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/colorSecondary"
-        app:tabIndicatorHeight="4dp"
-        app:tabMode="fixed">
+        app:tabIndicatorHeight="2.5dp"
+        app:tabMode="fixed"
+        app:tabTextColor="@color/tabTextColor">
 
         <android.support.design.widget.TabItem
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="28dp"
             android:text="@string/btn1tabLayout" />
 
         <android.support.design.widget.TabItem
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="28dp"
             android:text="@string/btn2tabLayout" />
 
     </android.support.design.widget.TabLayout>
@@ -54,7 +55,7 @@
         android:id="@+id/viewPagerFragments_id"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/whiteBackground"
         app:layout_constraintBottom_toTopOf="@+id/bot_nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +70,7 @@
         android:layout_width="143dp"
         android:layout_height="32dp"
         android:layout_marginTop="64dp"
-        android:text="@string/title_home"
+        android:text="@string/title_match"
         android:textColor="@color/colorSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.446"

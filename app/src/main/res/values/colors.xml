@@ -6,5 +6,7 @@
     <color name="colorSecondary">#95C900</color>
     <color name="colorSecondaryDark">#619800</color>
     <color name="colorSecondaryLight">#cafc4d</color>
+    <color name="whiteBackground">#f4f4f4</color>
+    <color name="tabTextColor">#f4f4f4</color>
     <color name="colorAccent">#D81B60</color>
 </resources>
