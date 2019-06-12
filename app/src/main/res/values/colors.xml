@@ -8,5 +8,6 @@
     <color name="colorSecondaryLight">#cafc4d</color>
     <color name="whiteBackground">#f4f4f4</color>
     <color name="tabTextColor">#f4f4f4</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#D81B60</color>4
+    <color name="colorBlack">#030303</color>
 </resources>

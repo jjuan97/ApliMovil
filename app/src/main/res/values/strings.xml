@@ -22,4 +22,8 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <!--String for item_list-->
+    <string name="item_date">DD/MM/AA</string>
+    <string name="item_score"># - #</string>
+    <string name="item_group">grupo A</string>
 </resources>
