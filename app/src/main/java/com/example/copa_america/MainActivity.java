@@ -28,31 +28,27 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view2);
-        mTextMessage = findViewById(R.id.message);
+        //declaracion bottonNavView
+        BottomNavigationView navView = findViewById(R.id.bot_nav_view);
+        mTextMessage = findViewById(R.id.message);  //muestra el mensaje para mostrar en que buttonNavView y navBar se encuentra
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        //proceso tabLayout para adicionar los fragments
+        //proceso de inflacion de tabLayout, view page para fragments y creacion objeto adapterFragment
         tabLayout = (TabLayout) findViewById(R.id.tabLayout_id);
         viewPagerFragment = (ViewPager) findViewById(R.id.viewPagerFragments_id);
-        ViewPagerFragmentAdapter adapter = new ViewPagerFragmentAdapter(getSupportFragmentManager());
-        //creado el objeto ViewPagerFragmentAdapter procedemos a adicionar fragments con la funcion de la clase ViewPagerFragmentAdapter
-        adapter.AddFragment(new FragmentGrupos(), "Grupos");
-        adapter.AddFragment(new FragmentEliminatorias(), "Eliminatorias");
-        //configuracion adapter
-        viewPagerFragment.setAdapter(adapter);
+        ViewPagerFragmentAdapter adapterFragment = new ViewPagerFragmentAdapter(getSupportFragmentManager());
+        //creado el objeto ViewPagerFragmentAdapter procedemos a adicionar fragments con la funcion addFragment de la clase ViewPagerFragmentAdapter
+        adapterFragment.addFragment(new FragmentGrupos(), getString(R.string.btn1tabLayout));
+        adapterFragment.addFragment(new FragmentEliminatorias(), getString(R.string.btn2tabLayout));
+        //configuracion adapterFragment al content_main(xml)
+        viewPagerFragment.setAdapter(adapterFragment);
         tabLayout.setupWithViewPager(viewPagerFragment);
 
+        //inflacion toolbar y habilitacion para este activity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
+
+        //configuracion de el DrawerLayout colocando la barra de navegacion lateral NavView
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -62,23 +58,14 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
+    /*   crea una opcion de un actionSelection en el toolbar, se puede utilizar para añadir equipos favoritos
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main2, menu);
         return true;
-    }
-
+    }*/
+    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -92,26 +79,22 @@ public class MainActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
+
+    //escuchar que boton del navBar fue presionado para generar la accion
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            mTextMessage.setText(R.string.title_home);
-        } else if (id == R.id.nav_gallery) {
-            mTextMessage.setText(R.string.menu_gallery);
-        } else if (id == R.id.nav_slideshow) {
-            mTextMessage.setText(R.string.menu_slideshow);
-        } else if (id == R.id.nav_tools) {
-            mTextMessage.setText(R.string.menu_tools);
-        } else if (id == R.id.nav_share) {
-            mTextMessage.setText(R.string.menu_share);
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_qr) {
+            mTextMessage.setText(R.string.menu_qr);
+        } else if (id == R.id.nav_settings) {
+            mTextMessage.setText(R.string.menu_settings);
+        } else if (id == R.id.nav_help) {
+            mTextMessage.setText(R.string.menu_help);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -119,24 +102,35 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    //escuchar que boton del botNavBar fue presionando para generar la accion
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                case R.id.navigation_match:
+                    mTextMessage.setText(R.string.title_match);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_groups:
+                    mTextMessage.setText(R.string.title_groups);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_teams:
+                    mTextMessage.setText(R.string.title_teams);
                     return true;
             }
             return false;
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();   //si crea conflicto con otros layouts agregar finish();
+        }
+    }
 
 }
