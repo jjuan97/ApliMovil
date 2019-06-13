@@ -89,7 +89,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_qr) {
+        if(id == R.id.nav_home){
+            mTextMessage.setText(R.string.menu_home);
+        }
+        else if(id == R.id.nav_qr) {
             mTextMessage.setText(R.string.menu_qr);
         } else if (id == R.id.nav_settings) {
             mTextMessage.setText(R.string.menu_settings);
