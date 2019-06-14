@@ -22,7 +22,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
     @NonNull
     @Override
     public ViewHolderDatos onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list,null,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list,parent,false);
         return new ViewHolderDatos(view);
     }
 

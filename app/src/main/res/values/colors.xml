@@ -10,4 +10,5 @@
     <color name="tabTextColor">#f4f4f4</color>
     <color name="colorAccent">#D81B60</color>4
     <color name="colorBlack">#030303</color>
+    <color name="colorGray">#CECDCD</color>
 </resources>
