@@ -3,6 +3,7 @@ package com.example.copa_america;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,13 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener{
 
-    private TextView mTextMessage;
-    private TabLayout tabLayout;
-    private ViewPager viewPagerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +29,15 @@ public class MainActivity extends AppCompatActivity
 
         //declaracion bottonNavView
         BottomNavigationView navView = findViewById(R.id.bot_nav_view);
-        mTextMessage = findViewById(R.id.message);  //muestra el mensaje para mostrar en que buttonNavView y navBar se encuentra
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        //inicio el fragment
+        setTitle("partidos");
+        FragmentPartidos fragmentPartidos = new FragmentPartidos();
+        FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction1.replace(R.id.frame, fragmentPartidos, "Tabla Grupos");
+        fragmentTransaction1.commit();
+        /*
         //proceso de inflacion de tabLayout, view page para fragments y creacion objeto adapterFragment
         tabLayout = (TabLayout) findViewById(R.id.tabLayout_id);
         viewPagerFragment = (ViewPager) findViewById(R.id.viewPagerFragments_id);
@@ -43,7 +48,7 @@ public class MainActivity extends AppCompatActivity
         //configuracion adapterFragment al content_main(xml)
         viewPagerFragment.setAdapter(adapterFragment);
         tabLayout.setupWithViewPager(viewPagerFragment);
-
+        */
         //inflacion toolbar y habilitacion para este activity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -87,14 +92,24 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+
+
         int id = item.getItemId();
 
-        if (id == R.id.nav_qr) {
-            mTextMessage.setText(R.string.menu_qr);
+        if(id == R.id.nav_home){
+            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_home), Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        else if(id == R.id.nav_qr) {
+            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_qr), Toast.LENGTH_SHORT);
+            toast.show();
         } else if (id == R.id.nav_settings) {
-            mTextMessage.setText(R.string.menu_settings);
+            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_settings), Toast.LENGTH_SHORT);
+            toast.show();
         } else if (id == R.id.nav_help) {
-            mTextMessage.setText(R.string.menu_help);
+            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_help), Toast.LENGTH_SHORT);
+            toast.show();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -110,13 +125,25 @@ public class MainActivity extends AppCompatActivity
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_match:
-                    mTextMessage.setText(R.string.title_match);
+                    setTitle("Partidos");
+                    FragmentPartidos fragmentPartidos = new FragmentPartidos();
+                    FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction1.replace(R.id.frame, fragmentPartidos, "Partidos");
+                    fragmentTransaction1.commit();
                     return true;
                 case R.id.navigation_groups:
-                    mTextMessage.setText(R.string.title_groups);
+                    setTitle("Tabla de Grupos");
+                    FragmentTablaGrupos fragmentTablaGrupos = new FragmentTablaGrupos();
+                    FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction2.replace(R.id.frame, fragmentTablaGrupos, "Tabla Grupos");
+                    fragmentTransaction2.commit();
                     return true;
                 case R.id.navigation_teams:
-                    mTextMessage.setText(R.string.title_teams);
+                    setTitle("Equipos");
+                    FragmentEquipos fragmentEquipos = new FragmentEquipos();
+                    FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction3.replace(R.id.frame, fragmentEquipos, "Equipos");
+                    fragmentTransaction3.commit();
                     return true;
             }
             return false;

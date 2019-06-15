@@ -18,12 +18,30 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="menu_home">Home</string>
+    <string name="menu_home">Inicio</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <!--String for item_list-->
     <string name="item_date">DD/MM/AA</string>
     <string name="item_score"># - #</string>
-    <string name="item_group">grupo A</string>
+    <string name="item_group">grupo X</string>
+    <string name="team_one">Equipo uno</string>
+    <string name="team_two">Equipo 2</string>
+    <string name="conten_description_team1">Equipo 1</string>
+    <string name="conten_description_team2">Equipo 2</string>
+    <!--String for name of teams-->
+    <string name="team_argentina">Argentina</string>
+    <string name="team_bolivia">Bolivia</string>
+    <string name="team_brasil">Brazil</string>
+    <string name="team_chile">Chile</string>
+    <string name="team_colombia">Colombia</string>
+    <string name="team_ecuador">Ecuador</string>
+    <string name="team_japan">Japan</string>
+    <string name="team_katar">Qatar</string>
+    <string name="team_paraguay">Paraguay</string>
+    <string name="team_peru">Peru</string>
+    <string name="team_uruguay">Uruguay</string>
+    <string name="team_venezuela">Venezuela</string>
+
 </resources>
