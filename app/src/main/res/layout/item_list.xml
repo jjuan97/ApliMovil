@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         card_view:cardBackgroundColor="@color/whiteBackground"
         card_view:cardCornerRadius="18dp"
-        app:cardElevation="2dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="7dp"
@@ -34,7 +33,7 @@
                     android:id="@+id/image_team1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@mipmap/colombia"
+                    android:src="@mipmap/ninguno"
                     android:contentDescription="@string/conten_description_team1"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
@@ -46,7 +45,8 @@
                     android:gravity="center"
                     android:text="@string/team_one"
                     android:textColor="@color/colorBlack"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:layout_marginBottom="10dp"/>
 
             </LinearLayout>
 
@@ -61,32 +61,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/roboto_bold"
+                    android:fontFamily="sans-serif-condensed"
                     android:gravity="center"
                     android:text="@string/item_date"
                     android:textColor="@color/colorBlack"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/text_score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/allerta_stencil"
+                    android:fontFamily="@font/advent_pro_bold"
                     android:gravity="center"
                     android:text="@string/item_score"
                     android:textColor="@color/colorBlack"
-                    android:textSize="28sp" />
+                    android:textSize="36sp" />
 
                 <TextView
                     android:id="@+id/text_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/roboto_bold"
+                    android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center"
                     android:text="@string/item_group"
                     android:textColor="@color/colorBlack"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -101,7 +101,7 @@
                     android:id="@+id/image_team2"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@mipmap/colombia"
+                    android:src="@mipmap/ninguno"
                     android:contentDescription="@string/conten_description_team2"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
@@ -113,7 +113,8 @@
                     android:gravity="center"
                     android:text="@string/team_two"
                     android:textColor="@color/colorBlack"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp"
+                    android:layout_marginBottom="10dp"/>
             </LinearLayout>
 
         </LinearLayout>

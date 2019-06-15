@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //inicio el fragment
-        setTitle("partidos");
+        setTitle(getString(R.string.title_match));
         FragmentPartidos fragmentPartidos = new FragmentPartidos();
         FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction1.replace(R.id.frame, fragmentPartidos, "Tabla Grupos");
+        fragmentTransaction1.replace(R.id.frame, fragmentPartidos, getString(R.string.title_match));
         fragmentTransaction1.commit();
         /*
         //proceso de inflacion de tabLayout, view page para fragments y creacion objeto adapterFragment
@@ -125,24 +125,24 @@ public class MainActivity extends AppCompatActivity
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_match:
-                    setTitle("Partidos");
+                    setTitle(getString(R.string.title_match));
                     FragmentPartidos fragmentPartidos = new FragmentPartidos();
                     FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction1.replace(R.id.frame, fragmentPartidos, "Partidos");
+                    fragmentTransaction1.replace(R.id.frame, fragmentPartidos, getString(R.string.title_match));
                     fragmentTransaction1.commit();
                     return true;
                 case R.id.navigation_groups:
-                    setTitle("Tabla de Grupos");
+                    setTitle(getString(R.string.title_tabla_groups));
                     FragmentTablaGrupos fragmentTablaGrupos = new FragmentTablaGrupos();
                     FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction2.replace(R.id.frame, fragmentTablaGrupos, "Tabla Grupos");
+                    fragmentTransaction2.replace(R.id.frame, fragmentTablaGrupos, getString(R.string.title_tabla_groups));
                     fragmentTransaction2.commit();
                     return true;
                 case R.id.navigation_teams:
-                    setTitle("Equipos");
+                    setTitle(getString(R.string.title_teams));
                     FragmentEquipos fragmentEquipos = new FragmentEquipos();
                     FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction3.replace(R.id.frame, fragmentEquipos, "Equipos");
+                    fragmentTransaction3.replace(R.id.frame, fragmentEquipos, getString(R.string.title_teams));
                     fragmentTransaction3.commit();
                     return true;
             }
