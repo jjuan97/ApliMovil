@@ -16,13 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener{
 
-    private TextView mTextMessage;
-    private TabLayout tabLayout;
-    private ViewPager viewPagerFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +29,6 @@ public class MainActivity extends AppCompatActivity
 
         //declaracion bottonNavView
         BottomNavigationView navView = findViewById(R.id.bot_nav_view);
-        mTextMessage = findViewById(R.id.message);  //muestra el mensaje para mostrar en que buttonNavView y navBar se encuentra
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         //inicio el fragment
@@ -95,17 +92,24 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+
+
         int id = item.getItemId();
 
         if(id == R.id.nav_home){
-            mTextMessage.setText(R.string.menu_home);
+            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_home), Toast.LENGTH_SHORT);
+            toast.show();
         }
         else if(id == R.id.nav_qr) {
-            mTextMessage.setText(R.string.menu_qr);
+            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_qr), Toast.LENGTH_SHORT);
+            toast.show();
         } else if (id == R.id.nav_settings) {
-            mTextMessage.setText(R.string.menu_settings);
+            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_settings), Toast.LENGTH_SHORT);
+            toast.show();
         } else if (id == R.id.nav_help) {
-            mTextMessage.setText(R.string.menu_help);
+            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_help), Toast.LENGTH_SHORT);
+            toast.show();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

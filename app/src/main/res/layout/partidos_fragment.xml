@@ -4,10 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorSecondaryLight">
+    android:layout_height="match_parent">
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,5 +15,45 @@
         android:layout_marginTop="48dp"
         android:text="partidos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        app:tabMaxWidth="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@color/colorPrimaryLight"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/colorSecondary"
+        app:tabIndicatorHeight="2.5dp"
+        app:tabMode="fixed"
+        app:tabTextColor="@color/tabTextColor">
+
+        <android.support.design.widget.TabItem
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:text="@string/btn1tabLayout" />
+
+        <android.support.design.widget.TabItem
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:text="@string/btn2tabLayout" />
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPagerFragments_id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout_id">
+
+
+    </android.support.v4.view.ViewPager>
 </android.support.constraint.ConstraintLayout>
