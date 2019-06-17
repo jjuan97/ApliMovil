@@ -25,7 +25,7 @@
     <string name="menu_send">Send</string>
     <!--String for item_list-->
     <string name="item_date">DD/MM/AA</string>
-    <string name="item_score">0 – 2</string>
+    <string name="item_score">6:45AM</string>
     <string name="item_group">Grupo X</string>
     <string name="team_one">Equipo uno</string>
     <string name="team_two">Equipo 2</string>
@@ -52,5 +52,18 @@
     <string name="group_semis">Semifinal</string>
     <string name="group_third">Tercer Lugar</string>
     <string name="group_final">Final</string>
+    <!--Strings for table of groups-->
+    <string name="group_a">Grupo A</string>
+    <string name="group_b">Grupo B</string>
+    <string name="group_c">Grupo C</string>
+    <string name="club">Club</string>
+    <string name="pts">Pts</string>
+    <string name="pj">PJ</string>
+    <string name="dg">DG</string>
+    <string name="first">1</string>
+    <string name="second">2</string>
+    <string name="third">3</string>
+    <string name="fourth">4</string>
+    <string name="numberZero">0</string>
 
 </resources>
