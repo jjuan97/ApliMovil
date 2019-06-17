@@ -2,13 +2,15 @@
 <resources>
     <color name="colorPrimary">#002981</color>
     <color name="colorPrimaryDark">#000053</color>
-    <color name="colorPrimaryLight">#4951b1</color>
+    <color name="colorPrimaryLight">#155799</color>
     <color name="colorSecondary">#95C900</color>
     <color name="colorSecondaryDark">#619800</color>
     <color name="colorSecondaryLight">#cafc4d</color>
-    <color name="whiteBackground">#f4f4f4</color>
+    <color name="whiteBackground">#ABEBEBEB</color>
     <color name="tabTextColor">#f4f4f4</color>
     <color name="colorAccent">#D81B60</color>4
     <color name="colorBlack">#030303</color>
-    <color name="colorGray">#CECDCD</color>
+    <color name="colorBlackLight">#3F3F3F</color>
+    <color name="colorGray">#bdc3c7</color>
+    <color name="cardBackground">#E6F4F4F4</color>
 </resources>

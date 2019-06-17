@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Copa America 2019</string>
+    <string name="title_tabla_groups">Tabla de Grupos</string>
     <!--Strings for button navbar-->
-    <string name="title_match">Partidos</string>
+    <string name="title_match">Encuentros</string>
     <string name="title_groups">Grupos</string>
     <string name="title_teams">Equipos</string>
     <!--Strings for tabLayout-->
@@ -24,12 +25,14 @@
     <string name="menu_send">Send</string>
     <!--String for item_list-->
     <string name="item_date">DD/MM/AA</string>
-    <string name="item_score"># - #</string>
-    <string name="item_group">grupo X</string>
+    <string name="item_score">0 – 2</string>
+    <string name="item_group">Grupo X</string>
     <string name="team_one">Equipo uno</string>
     <string name="team_two">Equipo 2</string>
     <string name="conten_description_team1">Equipo 1</string>
     <string name="conten_description_team2">Equipo 2</string>
+    <string name="item_score_eliminatorias">(?-?)</string>
+    <string name="num_llave">Llave #</string>
     <!--String for name of teams-->
     <string name="team_argentina">Argentina</string>
     <string name="team_bolivia">Bolivia</string>
@@ -43,5 +46,11 @@
     <string name="team_peru">Peru</string>
     <string name="team_uruguay">Uruguay</string>
     <string name="team_venezuela">Venezuela</string>
+    <string name="ninguno">Ninguno</string>
+    <!--Strings for play of phase-->
+    <string name="group_quarter">Cuartos de Final</string>
+    <string name="group_semis">Semifinal</string>
+    <string name="group_third">Tercer Lugar</string>
+    <string name="group_final">Final</string>
 
 </resources>

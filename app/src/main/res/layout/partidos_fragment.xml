@@ -56,4 +56,5 @@
 
 
     </android.support.v4.view.ViewPager>
+    <!--android:background="@color/colorGray"-->
 </android.support.constraint.ConstraintLayout>
