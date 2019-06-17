@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
         BottomNavigationView navView = findViewById(R.id.bot_nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        //inicio el fragment
+        //inicio el fragment encuentros
         setTitle(getString(R.string.title_match));
         FragmentPartidos fragmentPartidos = new FragmentPartidos();
         FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
