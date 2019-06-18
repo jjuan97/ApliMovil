@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class AdapterRecyclerViewEquipos extends RecyclerView.Adapter<AdapterRecyclerViewEquipos.ViewHolderEquipos> {
 
     ArrayList<Teams> dataList;
+    private View.OnClickListener listenerForTeams;
 
     public AdapterRecyclerViewEquipos(ArrayList<Teams> dataList) {
         this.dataList = dataList;
@@ -36,6 +37,21 @@ public class AdapterRecyclerViewEquipos extends RecyclerView.Adapter<AdapterRecy
         return dataList.size();
     }
 
+    public void setOnItemClickListener(View.OnClickListener listenerForTeams){
+
+        this.listenerForTeams = listenerForTeams;
+
+    }
+    /*
+    @Override
+    public void onClick(View v) {
+
+        if (listenerForTeams != null){
+            listenerForTeams.onClick(v);
+        }
+
+    }*/
+
     public class ViewHolderEquipos extends RecyclerView.ViewHolder {
 
         ImageView imgTeam;
@@ -46,6 +62,8 @@ public class AdapterRecyclerViewEquipos extends RecyclerView.Adapter<AdapterRecy
 
             imgTeam = (ImageView) itemView.findViewById(R.id.image_team);
             txtTeam = (TextView) itemView.findViewById(R.id.text_name_team);
+            itemView.setTag(this);
+            itemView.setOnClickListener(listenerForTeams);
         }
     }
 }
