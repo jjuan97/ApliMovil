@@ -1,20 +1,1388 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@drawable/background_copa_america">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
-        android:layout_marginTop="48dp"
-        android:text="puto el que lo lea"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/groupA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="7dp"
+            card_view:cardBackgroundColor="@color/cardBackground"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingStart="1dp"
+                    android:paddingLeft="1dp"
+                    android:paddingEnd="1dp"
+                    android:text="@string/group_a"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="24sp" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/clubA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:layout_span="6"
+                            android:text="@string/club"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp"
+                            android:gravity="start"/>
+
+                        <TextView
+                            android:id="@+id/ptsA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="@string/pts"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/pjA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="@string/pj"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/dgA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="@string/dg"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:paddingBottom="3dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/colorSecondaryLight">
+                        </FrameLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/positionOneA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:background="@color/blueSuccess"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/first"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageOneA"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/argentina"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameOneA"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_argentina"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreOneA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjOneA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djOneA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/graySeparator">
+                        </FrameLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/positionSecondA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:background="@color/blueSuccess"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/second"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageSecondA"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/venezuela"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameSecondA"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_venezuela"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreSecondA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjSecondA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djSecondA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/graySeparator" >
+                        </FrameLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/positionThirdA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:background="@color/orangeBestThird"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/third"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageThirdA"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameThirdA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:contentDescription="@string/ninguno"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreThirdA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjThirdA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djThirdA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/graySeparator" >
+                        </FrameLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:id="@+id/positionFourthA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/fourth"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageFourthA"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameFourthA"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreFourthA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjFourthA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djFourthA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/groupB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="7dp"
+            card_view:cardBackgroundColor="@color/cardBackground"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingStart="1dp"
+                    android:paddingLeft="1dp"
+                    android:paddingEnd="1dp"
+                    android:text="@string/group_b"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="24sp" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/clubB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:layout_span="6"
+                            android:text="@string/club"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp"
+                            android:gravity="start"/>
+
+                        <TextView
+                            android:id="@+id/ptsB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="@string/pts"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/pjB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="@string/pj"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/dgB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="@string/dg"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:paddingBottom="3dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/colorSecondaryLight" >
+                        </FrameLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/positionOneB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:background="@color/blueSuccess"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/first"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageOneB"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameOneB"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreOneB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjOneB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djOneB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/graySeparator" >
+                        </FrameLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/positionSecondB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:background="@color/blueSuccess"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/second"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageSecondB"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameSecondB"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreSecondB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjSecondB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djSecondB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/graySeparator"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginRight="1dp">
+                        </FrameLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/positionThirdB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:background="@color/orangeBestThird"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/third"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageThirdB"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameThirdB"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreThirdB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjThirdB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djThirdB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/graySeparator" >
+                        </FrameLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:id="@+id/positionFourthB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/fourth"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageFourthB"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameFourthB"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreFourthB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjFourthB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djFourthB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/groupC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="7dp"
+            card_view:cardBackgroundColor="@color/cardBackground"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginLeft="1dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingStart="1dp"
+                    android:paddingLeft="1dp"
+                    android:paddingEnd="1dp"
+                    android:text="@string/group_c"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="24sp" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:stretchColumns="*">
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/clubC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:layout_span="6"
+                            android:text="@string/club"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp"
+                            android:gravity="start"/>
+
+                        <TextView
+                            android:id="@+id/ptsC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="@string/pts"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/pjC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="@string/pj"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/dgC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="2dp"
+                            android:text="@string/dg"
+                            android:gravity="center"
+                            android:textColor="@color/colorBlackLight"
+                            android:textSize="20sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:paddingBottom="3dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/colorSecondaryLight" >
+                        </FrameLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/positionOneC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:background="@color/blueSuccess"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/first"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageOneC"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameOnec"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreOneC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjOneC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djOneC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/graySeparator" >
+                        </FrameLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/positionSecondC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:background="@color/blueSuccess"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/second"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageSecondC"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameSecondC"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreSecondC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjSecondC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djSecondC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/graySeparator"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginRight="1dp">
+                        </FrameLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <TextView
+                            android:id="@+id/positionThirdC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:background="@color/orangeBestThird"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/third"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageThirdC"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameThirdC"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreThirdC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjThirdC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djThirdC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_span="9"
+                            android:background="@color/graySeparator" >
+                        </FrameLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:paddingBottom="4dp">
+
+                        <TextView
+                            android:id="@+id/positionFourthC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/fourth"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                        <ImageView
+                            android:id="@+id/teamImageFourthC"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="18dp"
+                            android:layout_height="45dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:src="@mipmap/colombia"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/teamNameFourthC"
+                            android:contentDescription="@string/ninguno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="4"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                        <TextView
+                            android:id="@+id/scoreFourthC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:layout_span="1"
+                            android:layout_column="6"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/pjFourthC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:id="@+id/djFourthC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="45dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@string/numberZero"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

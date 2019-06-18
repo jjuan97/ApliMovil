@@ -13,4 +13,7 @@
     <color name="colorBlackLight">#3F3F3F</color>
     <color name="colorGray">#bdc3c7</color>
     <color name="cardBackground">#E6F4F4F4</color>
+    <color name="blueSuccess">#B24586F4</color>
+    <color name="orangeBestThird">#B2FA7D1A</color>
+    <color name="graySeparator">#96CFE4</color>
 </resources>
