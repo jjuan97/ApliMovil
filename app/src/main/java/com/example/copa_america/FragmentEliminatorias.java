@@ -85,21 +85,21 @@ public class FragmentEliminatorias extends Fragment implements Response.Listener
                 jsonObject= json.getJSONObject(i);
 
                 match.setTxtTeamOne(jsonObject.optString("local"));
-                System.out.println("local: "+match.getTxtTeamOne());
+                //System.out.println("local: "+match.getTxtTeamOne());
                 match.setTxtTeamTwo(jsonObject.optString("visitor"));
-                System.out.println("visitante: "+match.getTxtTeamTwo());
+                //System.out.println("visitante: "+match.getTxtTeamTwo());
                 match.setTxtDate(jsonObject.optString("date"));
-                System.out.println("fecha: "+match.getTxtDate());
+                //System.out.println("fecha: "+match.getTxtDate());
                 match.setTxtGroup(jsonObject.optString("stage")+"\n"+jsonObject.optString("estadio"));
-                System.out.println("grupo: "+match.getTxtGroup());
+                //System.out.println("grupo: "+match.getTxtGroup());
                 match.setState(jsonObject.optString("state"));
-                System.out.println("estado: "+match.getState());
+                //System.out.println("estado: "+match.getState());
                 match.setTime(jsonObject.optString("time"));
-                System.out.println("tiempo: "+match.getTime());
+                //System.out.println("tiempo: "+match.getTime());
                 match.setTxtScore(jsonObject.optString("score"));
-                System.out.println("marcador: "+match.getTxtScore());
+                //System.out.println("marcador: "+match.getTxtScore());
                 match.setHour(jsonObject.optString("hour"));
-                System.out.println("hora: "+match.getHour());
+                //System.out.println("hora: "+match.getHour());
 
                 String stage = jsonObject.optString("stage");
                 if (stage.equals("Cuartos de final"))
@@ -132,23 +132,7 @@ public class FragmentEliminatorias extends Fragment implements Response.Listener
 
     @Override
     public void onErrorResponse(VolleyError error) {
-
     }
 
-    private void llenarListaFinal() {
-        listPartidosFinal.add(new matches(R.mipmap.ninguno, R.mipmap.ninguno, getString(R.string.ninguno),getString(R.string.ninguno),getString(R.string.item_date),getString(R.string.item_score_eliminatorias),getString(R.string.num_llave)));
-    }
-    private void llenarListaTercer() {
-        listPartidosTercerPlace.add(new matches(R.mipmap.ninguno, R.mipmap.ninguno, getString(R.string.ninguno),getString(R.string.ninguno),getString(R.string.item_date),getString(R.string.item_score_eliminatorias),getString(R.string.num_llave)));
-    }
-    private void llenarListaSemis() {
-        listPartidosSemis.add(new matches(R.mipmap.ninguno, R.mipmap.ninguno, getString(R.string.ninguno),getString(R.string.ninguno),getString(R.string.item_date),getString(R.string.item_score_eliminatorias),getString(R.string.num_llave)));
-        listPartidosSemis.add(new matches(R.mipmap.ninguno, R.mipmap.ninguno, getString(R.string.ninguno),getString(R.string.ninguno),getString(R.string.item_date),getString(R.string.item_score_eliminatorias),getString(R.string.num_llave)));
-    }
-    private void llenarListaCuartos() {
-        listPartidosCuartos.add(new matches(R.mipmap.ninguno, R.mipmap.ninguno, getString(R.string.ninguno),getString(R.string.ninguno),getString(R.string.item_date),getString(R.string.item_score_eliminatorias),getString(R.string.num_llave)));
-        listPartidosCuartos.add(new matches(R.mipmap.ninguno, R.mipmap.ninguno, getString(R.string.ninguno),getString(R.string.ninguno),getString(R.string.item_date),getString(R.string.item_score_eliminatorias),getString(R.string.num_llave)));
-        listPartidosCuartos.add(new matches(R.mipmap.ninguno, R.mipmap.ninguno, getString(R.string.ninguno),getString(R.string.ninguno),getString(R.string.item_date),getString(R.string.item_score_eliminatorias),getString(R.string.num_llave)));
-        listPartidosCuartos.add(new matches(R.mipmap.ninguno, R.mipmap.ninguno, getString(R.string.ninguno),getString(R.string.ninguno),getString(R.string.item_date),getString(R.string.item_score_eliminatorias),getString(R.string.num_llave)));
-    }
+
 }

@@ -1,5 +1,6 @@
 package com.example.copa_america;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
     ArrayList<matches> listPartidos;
     private FragmentGrupos.OnFragmentInteractionListener mListener;
     JsonObjectRequest jsonObjectRequest;
+    ProgressDialog dialog;
 
     /*private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;*/
@@ -61,6 +63,10 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
     }
 
     public void loadWebService(){
+        dialog=new ProgressDialog(getContext());
+        dialog.setMessage("Cargando informacion");
+        dialog.show();
+
         String url = getResources().getString(R.string.urlWebService);
         url = url + "GroupMatches.json";
         System.out.println("URL: "+url);
@@ -79,29 +85,31 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
                 jsonObject=json.getJSONObject(i);
 
                 match.setTxtTeamOne(jsonObject.optString("local"));
-                System.out.println("local: "+match.getTxtTeamOne());
+                //System.out.println("local: "+match.getTxtTeamOne());
                 match.setTxtTeamTwo(jsonObject.optString("visitor"));
-                System.out.println("visitante: "+match.getTxtTeamTwo());
+                //System.out.println("visitante: "+match.getTxtTeamTwo());
                 match.setTxtGroup("GRUPO "+jsonObject.optString("group")+"\n"+jsonObject.optString("estadio"));
-                System.out.println("grupo: "+match.getTxtGroup());
+                //System.out.println("grupo: "+match.getTxtGroup());
                 match.setTxtDate(jsonObject.optString("date"));
-                System.out.println("fecha: "+match.getTxtDate());
+                //System.out.println("fecha: "+match.getTxtDate());
                 match.setState(jsonObject.optString("state"));
-                System.out.println("estado: "+match.getState());
+                //System.out.println("estado: "+match.getState());
                 match.setTime(jsonObject.optString("time"));
-                System.out.println("tiempo: "+match.getTime());
+                //System.out.println("tiempo: "+match.getTime());
                 match.setTxtScore(jsonObject.optString("score"));
-                System.out.println("marcador: "+match.getTxtScore());
+                //System.out.println("marcador: "+match.getTxtScore());
                 match.setHour(jsonObject.optString("hour"));
-                System.out.println("hora: "+match.getHour());
+                //System.out.println("hora: "+match.getHour());
 
                 listPartidos.add(match);
             }
             AdapterRecyclerView adapterMatches = new AdapterRecyclerView(listPartidos, getContext());
             recyclerViewGroups.setAdapter(adapterMatches);
+            dialog.hide();
             adapterMatches.setOnItemClickListener(onItemClickListener);
 
         }catch(JSONException e){
+            dialog.hide();
             e.printStackTrace();
             Toast.makeText(getContext(), "No se ha podido descargar la informacion" +
                     " "+response, Toast.LENGTH_LONG).show();
@@ -110,6 +118,7 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
 
     @Override
     public void onErrorResponse(VolleyError error) {
+        dialog.hide();
         Toast.makeText(getContext(), "NO SE PUDO CONECTAR "+ error.toString(), Toast.LENGTH_LONG).show();
         System.out.println();
         //dialog.hide();
@@ -164,24 +173,5 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
     };
 
 
-    private void llenarLista() {
-        listPartidos.add(new matches(R.mipmap.brasil, R.mipmap.bolivia, getString(R.string.team_brasil),getString(R.string.team_bolivia),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.venezuela, R.mipmap.peru, getString(R.string.team_venezuela),getString(R.string.team_peru),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.argentina, R.mipmap.colombia, getString(R.string.team_argentina),getString(R.string.team_colombia),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.paraguay, R.mipmap.katar, getString(R.string.team_paraguay),getString(R.string.team_katar),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.uruguay, R.mipmap.ecuador, getString(R.string.team_uruguay),getString(R.string.team_ecuador),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.japan, R.mipmap.chile, getString(R.string.team_japan),getString(R.string.team_chile),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.bolivia, R.mipmap.peru, getString(R.string.team_bolivia),getString(R.string.team_peru),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.brasil, R.mipmap.venezuela, getString(R.string.team_brasil),getString(R.string.team_venezuela),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.colombia, R.mipmap.katar, getString(R.string.team_colombia),getString(R.string.team_katar),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.argentina, R.mipmap.paraguay, getString(R.string.team_argentina),getString(R.string.team_paraguay),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.uruguay, R.mipmap.japan, getString(R.string.team_uruguay),getString(R.string.team_japan),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.ecuador, R.mipmap.chile, getString(R.string.team_ecuador),getString(R.string.team_chile),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.bolivia, R.mipmap.venezuela, getString(R.string.team_bolivia),getString(R.string.team_venezuela),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.peru, R.mipmap.brasil, getString(R.string.team_peru),getString(R.string.team_brasil),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.katar, R.mipmap.argentina, getString(R.string.team_katar),getString(R.string.team_argentina),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.colombia, R.mipmap.paraguay, getString(R.string.team_colombia),getString(R.string.team_paraguay),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.chile, R.mipmap.uruguay, getString(R.string.team_chile),getString(R.string.team_uruguay),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-        listPartidos.add(new matches(R.mipmap.ecuador, R.mipmap.japan, getString(R.string.team_ecuador),getString(R.string.team_japan),getString(R.string.item_date),getString(R.string.item_score),getString(R.string.item_group)));
-    }
+
 }

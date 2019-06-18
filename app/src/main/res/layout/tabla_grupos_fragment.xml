@@ -43,6 +43,7 @@
                     android:textSize="24sp" />
 
                 <TableLayout
+                    android:id="@+id/tableGroupA"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:stretchColumns="*">
@@ -134,25 +135,25 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/argentina"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
 
                         <TextView
                             android:id="@+id/teamNameOneA"
-                            android:contentDescription="@string/ninguno"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:layout_span="4"
-                            android:fontFamily="sans-serif"
-                            android:gravity="start|center_vertical"
-                            android:text="@string/team_argentina"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="20sp"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
-                            android:focusable="true"/>
+                            android:contentDescription="@string/ninguno"
+                            android:focusable="true"
+                            android:fontFamily="sans-serif"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/team_colombia"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/scoreOneA"
@@ -175,7 +176,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djOneA"
+                            android:id="@+id/dgOneA"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -226,7 +227,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/venezuela"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -239,7 +240,7 @@
                             android:layout_span="4"
                             android:fontFamily="sans-serif"
                             android:gravity="start|center_vertical"
-                            android:text="@string/team_venezuela"
+                            android:text="@string/team_colombia"
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp"
                             android:background="?attr/selectableItemBackground"
@@ -267,7 +268,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djSecondA"
+                            android:id="@+id/dgSecondA"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -318,7 +319,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -359,7 +360,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djThirdA"
+                            android:id="@+id/dgThirdA"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -410,7 +411,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -451,7 +452,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djFourthA"
+                            android:id="@+id/dgFourthA"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -590,7 +591,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -631,7 +632,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djOneB"
+                            android:id="@+id/dgOneB"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -682,7 +683,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -723,7 +724,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djSecondB"
+                            android:id="@+id/dgSecondB"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -776,7 +777,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -817,7 +818,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djThirdB"
+                            android:id="@+id/dgThirdB"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -868,7 +869,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -909,7 +910,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djFourthB"
+                            android:id="@+id/dgFourthB"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -1048,13 +1049,13 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
 
                         <TextView
-                            android:id="@+id/teamNameOnec"
+                            android:id="@+id/teamNameOneC"
                             android:contentDescription="@string/ninguno"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
@@ -1089,7 +1090,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djOneC"
+                            android:id="@+id/dgOneC"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -1140,7 +1141,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -1181,7 +1182,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djSecondC"
+                            android:id="@+id/dgSecondC"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -1234,7 +1235,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -1275,7 +1276,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djThirdC"
+                            android:id="@+id/dgThirdC"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
@@ -1326,7 +1327,7 @@
                             android:layout_height="45dp"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:src="@mipmap/colombia"
+                            android:src="@mipmap/ninguno"
                             android:background="?attr/selectableItemBackground"
                             android:clickable="true"
                             android:focusable="true"/>
@@ -1367,7 +1368,7 @@
                             android:textColor="@color/colorBlack"
                             android:textSize="20sp" />
                         <TextView
-                            android:id="@+id/djFourthC"
+                            android:id="@+id/dgFourthC"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:fontFamily="sans-serif"
