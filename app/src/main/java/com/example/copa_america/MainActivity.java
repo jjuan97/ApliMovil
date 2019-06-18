@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener, FragmentEquipos.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener, FragmentEquipos.OnFragmentInteractionListener, FragmentGrupos.OnFragmentInteractionListener{
 
 
     @Override
@@ -164,7 +164,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
+        if (drawer.isDrawerOpen(GravityCompat.START) || getFragmentManager().getBackStackEntryCount() > 0 ) {
+            getFragmentManager().popBackStack();
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();   //si crea conflicto con otros layouts agregar finish();

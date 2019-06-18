@@ -1,10 +1,13 @@
 package com.example.copa_america;
 
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -31,6 +34,7 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
     //declaration recycler view
     RecyclerView recyclerViewGroups;
     ArrayList<matches> listPartidos;
+    private FragmentGrupos.OnFragmentInteractionListener mListener;
     JsonObjectRequest jsonObjectRequest;
 
     /*private RecyclerView.Adapter mAdapter;
@@ -95,6 +99,7 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
             }
             AdapterRecyclerView adapterMatches = new AdapterRecyclerView(listPartidos, getContext());
             recyclerViewGroups.setAdapter(adapterMatches);
+            adapterMatches.setOnItemClickListener(onItemClickListener);
 
         }catch(JSONException e){
             e.printStackTrace();
@@ -110,6 +115,53 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
         //dialog.hide();
         Log.d("ERROR: ", error.toString());
     }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof FragmentGrupos.OnFragmentInteractionListener) {
+            mListener = (FragmentGrupos.OnFragmentInteractionListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
+    }
+
+    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            //FragmentEquipo fragmentSelectedTeam = new FragmentEquipo();
+/*
+            //enviar datos referencia de que equipo se quiere mostrar el fragment
+            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
+            int position = viewHolder.getAdapterPosition();
+            Bundle args = new Bundle();
+            args.putInt("position", position);
+            fragmentSelectedTeam.setArguments(args);
+            //System.out.println(position);
+
+            //transactiones para pasar a el siguiente fragment de descripcion del equipo
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame, fragmentSelectedTeam);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();*/
+            System.out.println("aquitoy");
+            Toast.makeText(getContext(), "You Clicked: " + listPartidos.get
+            (recyclerViewGroups.getChildAdapterPosition(view)).getTxtTeamOne(), Toast.LENGTH_SHORT).show();
+        }
+    };
 
 
     private void llenarLista() {
