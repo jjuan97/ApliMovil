@@ -71,4 +71,5 @@
     <!--Strings menu save-->
     <string name="save">Guardar</string>
     <string name="add_new">Si</string>
+    <string name="scan_canceled">No se pudo</string>
 </resources>
