@@ -13,4 +13,5 @@
     <color name="colorBlackLight">#3F3F3F</color>
     <color name="colorGray">#bdc3c7</color>
     <color name="cardBackground">#E6F4F4F4</color>
+    <color name="finalizado">#D80027</color>
 </resources>

@@ -9,10 +9,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class FragmentEliminatorias extends Fragment {
+public class FragmentEliminatorias extends Fragment implements Response.Listener<JSONObject>, Response.ErrorListener{
 
     View view;
     //declaration recycler view
@@ -24,6 +34,7 @@ public class FragmentEliminatorias extends Fragment {
     ArrayList<matches> listPartidosSemis;
     ArrayList<matches> listPartidosTercerPlace;
     ArrayList<matches> listPartidosFinal;
+    private JsonObjectRequest jsonObjectRequest;
 
     public FragmentEliminatorias() {
     }
@@ -33,36 +44,95 @@ public class FragmentEliminatorias extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.eliminatorias_fragment, container, false);
 
-        //adapter para cuartos de final
         listPartidosCuartos = new ArrayList<>();
+        listPartidosSemis = new ArrayList<>();
+        listPartidosTercerPlace = new ArrayList<>();
+        listPartidosFinal = new ArrayList<>();
+
         recyclerViewCuartos = view.findViewById(R.id.recycler_view_eliminatorias_cuartos);
         recyclerViewCuartos.setLayoutManager(new LinearLayoutManager(getContext()));
-        AdapterRecyclerView adapterMatches1 = new AdapterRecyclerView(listPartidosCuartos);
-        recyclerViewCuartos.setAdapter(adapterMatches1);
-        llenarListaCuartos();
-        //adapter para semifinales
-        listPartidosSemis = new ArrayList<>();
+
         recyclerViewSemis = view.findViewById(R.id.recycler_view_eliminatorias_semifinales);
         recyclerViewSemis.setLayoutManager(new LinearLayoutManager(getContext()));
-        AdapterRecyclerView adapterMatches2 = new AdapterRecyclerView(listPartidosSemis);
-        recyclerViewSemis.setAdapter(adapterMatches2);
-        llenarListaSemis();
-        //adapter para tercer lugar
-        listPartidosTercerPlace = new ArrayList<>();
+
         recyclerViewTercerPlace = view.findViewById(R.id.recycler_view_eliminatorias_tercerlugar);
         recyclerViewTercerPlace.setLayoutManager(new LinearLayoutManager(getContext()));
-        AdapterRecyclerView adapterMatches3 = new AdapterRecyclerView(listPartidosTercerPlace);
-        recyclerViewTercerPlace.setAdapter(adapterMatches3);
-        llenarListaTercer();
-        //adapter para final
-        listPartidosFinal = new ArrayList<>();
+
         recyclerViewFinal = view.findViewById(R.id.recycler_view_eliminatorias_final);
         recyclerViewFinal.setLayoutManager(new LinearLayoutManager(getContext()));
-        AdapterRecyclerView adapterMatches4 = new AdapterRecyclerView(listPartidosFinal);
-        recyclerViewFinal.setAdapter(adapterMatches4);
-        llenarListaFinal();
+
+        loadWebService();
 
         return view;
+    }
+
+    private void loadWebService() {
+        String url = getResources().getString(R.string.urlWebService);
+        url = url + "playOffs.json";
+        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+        VolleySingleton.getIntanciaVolley(getContext()).addToRequestQueue(jsonObjectRequest);
+
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+        matches match = null;
+        JSONArray json = response.optJSONArray("matches");
+        try{
+            for(int i=0; i<json.length();i++){
+                match = new matches();
+                JSONObject jsonObject=null;
+                jsonObject= json.getJSONObject(i);
+
+                match.setTxtTeamOne(jsonObject.optString("local"));
+                System.out.println("local: "+match.getTxtTeamOne());
+                match.setTxtTeamTwo(jsonObject.optString("visitor"));
+                System.out.println("visitante: "+match.getTxtTeamTwo());
+                match.setTxtDate(jsonObject.optString("date"));
+                System.out.println("fecha: "+match.getTxtDate());
+                match.setTxtGroup(jsonObject.optString("stage")+"\n"+jsonObject.optString("estadio"));
+                System.out.println("grupo: "+match.getTxtGroup());
+                match.setState(jsonObject.optString("state"));
+                System.out.println("estado: "+match.getState());
+                match.setTime(jsonObject.optString("time"));
+                System.out.println("tiempo: "+match.getTime());
+                match.setTxtScore(jsonObject.optString("score"));
+                System.out.println("marcador: "+match.getTxtScore());
+                match.setHour(jsonObject.optString("hour"));
+                System.out.println("hora: "+match.getHour());
+
+                String stage = jsonObject.optString("stage");
+                if (stage.equals("Cuartos de final"))
+                    listPartidosCuartos.add(match);
+                else if (stage.equals("Semifinal"))
+                    listPartidosSemis.add(match);
+                else if (stage.equals("Tercer lugar"))
+                    listPartidosTercerPlace.add(match);
+                else
+                    listPartidosFinal.add(match);
+            }
+            AdapterRecyclerView adapterMatches1 = new AdapterRecyclerView(listPartidosCuartos, getContext());
+            recyclerViewCuartos.setAdapter(adapterMatches1);
+
+            AdapterRecyclerView adapterMatches2 = new AdapterRecyclerView(listPartidosSemis, getContext());
+            recyclerViewSemis.setAdapter(adapterMatches2);
+
+            AdapterRecyclerView adapterMatches3 = new AdapterRecyclerView(listPartidosTercerPlace, getContext());
+            recyclerViewTercerPlace.setAdapter(adapterMatches3);
+
+            AdapterRecyclerView adapterMatches4 = new AdapterRecyclerView(listPartidosFinal, getContext());
+            recyclerViewFinal.setAdapter(adapterMatches4);
+
+        }catch(JSONException e){
+            e.printStackTrace();
+            Toast.makeText(getContext(), "No se ha podido descargar la informacion" +
+                    " "+response, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+
     }
 
     private void llenarListaFinal() {

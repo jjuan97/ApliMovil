@@ -1,0 +1,92 @@
+{
+    "matches": [
+        {
+            "matchID":"1",
+            "stage":"Cuartos de final",
+            "date":"27/06/19",
+            "state":"Sin jugar",            
+            "hour":"7:30PM",              
+            "local":"Por definirse",
+            "visitor":"Por definirse",
+            "score":"-",
+            "time":"-"
+        },
+        {
+            "matchID":"2",
+            "stage":"Cuartos de final",
+            "date":"28/06/19",
+            "state":"Sin jugar",
+            "hour":"2:00PM",
+            "local":"Por definirse",
+            "visitor":"Por definirse",
+            "score":"-",
+            "time":"-"
+        },
+        {
+            "matchID":"3",
+            "stage":"Cuartos de final",
+            "date":"28/06/19",
+            "state":"Sin jugar",            
+            "hour":"6:00PM",
+            "local":"Por definirse",
+            "visitor":"Por definirse",
+            "score":"-",
+            "time":"-"
+        },
+        {
+            "matchID":"4",
+            "stage":"Cuartos de final",
+            "date":"29/06/19",
+            "state":"Sin jugar",            
+            "hour":"2:00PM",              
+            "local":"Por definirse",
+            "visitor":"Por definirse",
+            "score":"-",
+            "time":"-"
+        },
+        {
+            "matchID":"5",
+            "stage":"Semifinal",
+            "date":"02/07/19",
+            "state":"Sin jugar",            
+            "hour":"7:30PM",              
+            "local":"Por definirse",
+            "visitor":"Por definirse",
+            "score":"-",
+            "time":"-"
+        },
+        {
+            "matchID":"6",
+            "stage":"Semifinal",
+            "date":"03/07/19",
+            "state":"Sin jugar",            
+            "hour":"7:30PM",              
+            "local":"Por definirse",
+            "visitor":"Por definirse",
+            "score":"-",
+            "time":"-"
+        },
+        {
+            "matchID":"7",
+            "stage":"Tercer lugar",
+            "date":"06/07/19",
+            "state":"Sin jugar",            
+            "hour":"2:00PM",              
+            "local":"Por definirse",
+            "visitor":"Por definirse",
+            "score":"-",
+            "time":"-"
+        },
+        {
+            "matchID":"8",
+            "stage":"Final",
+            "date":"07/07/19",
+            "state":"Sin jugar",            
+            "hour":"3:00PM",              
+            "local":"Por definirse",
+            "visitor":"Por definirse",
+            "score":"-",
+            "time":"-"
+        }
+    ]
+}

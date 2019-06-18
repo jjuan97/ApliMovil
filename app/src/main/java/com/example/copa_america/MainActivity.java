@@ -31,12 +31,7 @@ public class MainActivity extends AppCompatActivity
         BottomNavigationView navView = findViewById(R.id.bot_nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        //inicio el fragment encuentros
-        setTitle(getString(R.string.title_match));
-        FragmentPartidos fragmentPartidos = new FragmentPartidos();
-        FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction1.replace(R.id.frame, fragmentPartidos, getString(R.string.title_match));
-        fragmentTransaction1.commit();
+
         /*
         //proceso de inflacion de tabLayout, view page para fragments y creacion objeto adapterFragment
         tabLayout = (TabLayout) findViewById(R.id.tabLayout_id);
@@ -86,6 +81,16 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }*/
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        //inicio el fragment encuentros
+        setTitle(getString(R.string.title_match));
+        FragmentPartidos fragmentPartidos = new FragmentPartidos();
+        FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction1.replace(R.id.frame, fragmentPartidos, getString(R.string.title_match));
+        fragmentTransaction1.commit();
+    }
 
     //escuchar que boton del navBar fue presionado para generar la accion
     @SuppressWarnings("StatementWithEmptyBody")
