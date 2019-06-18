@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.copa_america.entidadesBD.equipoDatabaseAccesor;
-import com.example.copa_america.entidadesBD.equiposBD;
 
 import java.util.ArrayList;
 import java.util.List;

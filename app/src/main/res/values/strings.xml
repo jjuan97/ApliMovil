@@ -68,4 +68,7 @@
     <string name="numberZero">0</string>
     <!--Strings for match info-->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Strings menu save-->
+    <string name="save">Guardar</string>
+    <string name="add_new">Si</string>
 </resources>
