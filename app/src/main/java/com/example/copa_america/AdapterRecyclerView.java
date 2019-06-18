@@ -1,5 +1,6 @@
 package com.example.copa_america;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,9 +14,11 @@ import java.util.ArrayList;
 public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerView.ViewHolderDatos> {
 
     ArrayList<matches> dataList;
+    Context context;
 
-    public AdapterRecyclerView(ArrayList<matches> dataList) {
+    public AdapterRecyclerView(ArrayList<matches> dataList, Context context) {
         this.dataList = dataList;
+        this.context = context;
     }
 
     //onCreateViewHolder enlaca este adaptador con item_list (XML)
@@ -29,13 +32,59 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
     //obetenemos los datos de la clase matches.java
     @Override
     public void onBindViewHolder(@NonNull ViewHolderDatos viewHolderDatos, int i) {
-        viewHolderDatos.imgTeamOne.setImageResource(dataList.get(i).getImgTeamOne());
-        viewHolderDatos.imgTeamTwo.setImageResource(dataList.get(i).getImgTeamTwo());
+        //viewHolderDatos.imgTeamOne.setImageResource(dataList.get(i).getImgTeamOne());
+        //viewHolderDatos.imgTeamTwo.setImageResource(dataList.get(i).getImgTeamTwo());
         viewHolderDatos.txtTeamOne.setText(dataList.get(i).getTxtTeamOne());
         viewHolderDatos.txtTeamTwo.setText(dataList.get(i).getTxtTeamTwo());
-        viewHolderDatos.txtDate.setText(dataList.get(i).getTxtDate());
-        viewHolderDatos.txtScore.setText(dataList.get(i).getTxtScore());
         viewHolderDatos.txtGroup.setText(dataList.get(i).getTxtGroup());
+        if(dataList.get(i).getState().equals("Live")){
+            viewHolderDatos.txtScore.setText(dataList.get(i).getTxtScore());
+            viewHolderDatos.txtDate.setText(dataList.get(i).getTime());
+            viewHolderDatos.txtDate.setTextColor(context.getResources().getColor(R.color.colorSecondary));
+        }
+        else if (dataList.get(i).getState().equals("Finalizado")){
+            viewHolderDatos.txtScore.setText(dataList.get(i).getTxtScore());
+            viewHolderDatos.txtDate.setText(dataList.get(i).getState());
+            viewHolderDatos.txtDate.setTextColor(context.getResources().getColor(R.color.finalizado));
+        }
+        else {
+            viewHolderDatos.txtScore.setText(dataList.get(i).getHour());
+            viewHolderDatos.txtDate.setText(dataList.get(i).getTxtDate());
+            viewHolderDatos.txtDate.setTextColor(context.getResources().getColor(R.color.colorBlackLight));
+        }
+
+        viewHolderDatos.imgTeamOne.setImageResource(selectImg(dataList.get(i).getTxtTeamOne()));
+        viewHolderDatos.imgTeamTwo.setImageResource(selectImg(dataList.get(i).getTxtTeamTwo()));
+
+    }
+
+    private int selectImg(String team) {
+        if(team.equals("Argentina"))
+            return R.mipmap.argentina;
+        else if(team.equals("Bolivia"))
+            return R.mipmap.bolivia;
+        else if(team.equals("Brasil"))
+            return R.mipmap.brasil;
+        else if(team.equals("Chile"))
+            return R.mipmap.chile;
+        else if(team.equals("Colombia"))
+            return R.mipmap.colombia;
+        else if(team.equals("Ecuador"))
+            return R.mipmap.ecuador;
+        else if(team.equals("Japón"))
+            return R.mipmap.japan;
+        else if(team.equals("Catar"))
+            return R.mipmap.katar;
+        else if(team.equals("Paraguay"))
+            return R.mipmap.paraguay;
+        else if(team.equals("Perú"))
+            return R.mipmap.peru;
+        else if(team.equals("Uruguay"))
+            return R.mipmap.uruguay;
+        else if(team.equals("Venezuela"))
+            return R.mipmap.venezuela;
+        else
+            return R.mipmap.ninguno;
     }
 
     //retorna el tamaño de la lista de partidos

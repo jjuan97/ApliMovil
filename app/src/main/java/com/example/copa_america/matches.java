@@ -9,6 +9,9 @@ public class matches {
     private String txtDate;
     private String txtScore;
     private String txtGroup;
+    private String state;
+    private String time;
+    private String hour;
 
     public matches(){
 
@@ -78,5 +81,29 @@ public class matches {
 
     public void setTxtGroup(String txtGroup) {
         this.txtGroup = txtGroup;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getHour() {
+        return hour;
+    }
+
+    public void setHour(String hour) {
+        this.hour = hour;
     }
 }
