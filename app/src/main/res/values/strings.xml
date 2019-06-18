@@ -71,4 +71,7 @@
     <!--Strings menu save-->
     <string name="save">Guardar</string>
     <string name="add_new">Si</string>
+    <string name="title_activity_qr">QRActivity</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
 </resources>

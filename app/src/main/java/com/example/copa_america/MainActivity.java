@@ -1,5 +1,6 @@
 package com.example.copa_america;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,7 +22,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener, FragmentEquipos.OnFragmentInteractionListener, FragmentGrupos.OnFragmentInteractionListener{
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,13 +103,9 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if(id == R.id.nav_home){
-            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_home), Toast.LENGTH_SHORT);
-            toast.show();
-        }
-        else if(id == R.id.nav_qr) {
-            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_qr), Toast.LENGTH_SHORT);
-            toast.show();
+        if(id == R.id.nav_qr) {
+            Intent intent= new Intent (MainActivity.this, QRActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_settings) {
             Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_settings), Toast.LENGTH_SHORT);
             toast.show();
