@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -73,26 +74,24 @@ public class FragmentEquipos extends Fragment {
     private View.OnClickListener onItemClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //Step 4 of 4: Finally call getTag() on the view.
-            // This viewHolder will have all required values.
-            //RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
-            //int position = viewHolder.getAdapterPosition();
-            // viewHolder.getItemId();
-            // viewHolder.getItemViewType();
-            // viewHolder.itemView;
-            //Teams thisItem = Teams.get(position);
+
             FragmentEquipo fragmentSelectedTeam = new FragmentEquipo();
-            FragmentTransaction fragmentTransaction1 = getFragmentManager().beginTransaction();
-            fragmentTransaction1.replace(R.id.frame, fragmentSelectedTeam);
-            fragmentTransaction1.commit();
+
+            //enviar datos referencia de que equipo se quiere mostrar el fragment
+            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
+            int position = viewHolder.getAdapterPosition();
+            Bundle args = new Bundle();
+            args.putInt("position", position);
+            fragmentSelectedTeam.setArguments(args);
+            //System.out.println(position);
+
+            //transactiones para pasar a el siguiente fragment de descripcion del equipo
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame, fragmentSelectedTeam);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
             //Toast.makeText(getContext(), "You Clicked: " + listEquipos.get
                     //(recyclerViewEquipos.getChildAdapterPosition(view)).getTxtTeam(), Toast.LENGTH_SHORT).show();
-            //Create the intent for navigation purposes; the context is the current Activity, so getActivity() must be called
-            //Intent i = new Intent(getActivity(), MainActivity.class);
-            //Set information in the intent for the next Activity
-            //i.putExtra("nombreLista", thisItem.getTitle());
-            //Launch the new Activity
-            //startActivity(i);
         }
     };
 
