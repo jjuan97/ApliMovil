@@ -1,5 +1,6 @@
 package com.example.copa_america;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -108,8 +109,8 @@ public class MainActivity extends AppCompatActivity
             toast.show();
         }
         else if(id == R.id.nav_qr) {
-            Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_qr), Toast.LENGTH_SHORT);
-            toast.show();
+            Intent intent= new Intent (MainActivity.this, qr.class);
+            startActivity(intent);
         } else if (id == R.id.nav_settings) {
             Toast toast = Toast.makeText(getApplicationContext(), getText(R.string.menu_settings), Toast.LENGTH_SHORT);
             toast.show();
