@@ -25,6 +25,8 @@ public class MatchBD {
         this.txtScore = txtScore;
     }
 
+
+
     public int getImgTeamOne() {
         return imgTeamOne;
     }

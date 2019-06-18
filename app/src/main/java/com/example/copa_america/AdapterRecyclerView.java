@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerView.ViewHolderDatos> {
 
     ArrayList<matches> dataList;
-    private View.OnClickListener listenerForMatches;
+    private View.OnLongClickListener listenerForMatches;
     Context context;
 
     public AdapterRecyclerView(ArrayList<matches> dataList, Context context) {
@@ -57,6 +57,8 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
         viewHolderDatos.imgTeamOne.setImageResource(selectImg(dataList.get(i).getTxtTeamOne()));
         viewHolderDatos.imgTeamTwo.setImageResource(selectImg(dataList.get(i).getTxtTeamTwo()));
 
+
+
     }
 
     private int selectImg(String team) {
@@ -94,7 +96,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
         return dataList.size();
     }
 
-    public void setOnItemClickListener(View.OnClickListener listenerForMatches){
+    public void setOnItemClickListener(View.OnLongClickListener listenerForMatches){
 
         this.listenerForMatches = listenerForMatches;
 
@@ -122,7 +124,7 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
             txtScore = (TextView) itemView.findViewById(R.id.text_score);
             txtGroup = (TextView) itemView.findViewById(R.id.text_group);
             itemView.setTag(this);
-            itemView.setOnClickListener(listenerForMatches);
+            itemView.setOnLongClickListener(listenerForMatches);
         }
     }
 }

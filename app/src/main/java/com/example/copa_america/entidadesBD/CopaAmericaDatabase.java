@@ -5,5 +5,5 @@ import android.arch.persistence.room.RoomDatabase;
 
 @Database(entities = {MatchBD.class}, version = 1)
 public abstract class CopaAmericaDatabase extends RoomDatabase {
-    public abstract MatchDAO MatchDAO();
+    public abstract MatchDAO matchDAO();
 }

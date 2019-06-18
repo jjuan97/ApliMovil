@@ -3,6 +3,7 @@ package com.example.copa_america;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,17 +12,22 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.copa_america.entidadesBD.CopaAmericaDatabaseAccesor;
+import com.example.copa_america.entidadesBD.MatchBD;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -147,31 +153,63 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
         void onFragmentInteraction(Uri uri);
     }
 
-    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
+    private View.OnLongClickListener onItemClickListener = new View.OnLongClickListener() {
         @Override
-        public void onClick(View view) {
+        public boolean onLongClick(View view) {
 
-            //FragmentEquipo fragmentSelectedTeam = new FragmentEquipo();
-/*
-            //enviar datos referencia de que equipo se quiere mostrar el fragment
-            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
-            int position = viewHolder.getAdapterPosition();
-            Bundle args = new Bundle();
-            args.putInt("position", position);
-            fragmentSelectedTeam.setArguments(args);
-            //System.out.println(position);
+            final TextView teamOne = view.findViewById(R.id.text_team_one);
+            final TextView teamTwo = view.findViewById(R.id.text_team_two);
+            final TextView score = view.findViewById(R.id.text_score);
 
-            //transactiones para pasar a el siguiente fragment de descripcion del equipo
-            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragmentSelectedTeam);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();*/
-            System.out.println("aquitoy");
-            Toast.makeText(getContext(), "You Clicked: " + listPartidos.get
-            (recyclerViewGroups.getChildAdapterPosition(view)).getTxtTeamOne(), Toast.LENGTH_SHORT).show();
+            System.out.println(teamOne.getText().toString());
+            System.out.println(teamTwo.getText().toString());
+            System.out.println(score.getText().toString());
+
+            PopupMenu popupMenu = new PopupMenu(view.getContext(), view);
+            getActivity().getMenuInflater().inflate(R.menu.menu_ctx_etiqueta, popupMenu.getMenu());
+
+            popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    switch (item.getItemId()) {
+                        case R.id.CtxLblOpc1:
+                            System.out.println("aquitoy1");
+                            MatchBD match = new MatchBD(teamOne.getText().toString(),
+                                    teamTwo.getText().toString(), score.getText().toString());
+                            saveMatch(match);
+                            return true;
+                        default:
+                            return false;
+                    }
+                }
+            });
+            popupMenu.show();
+
+            return true;
+            //System.out.println("aquitoy");
+            //Toast.makeText(getContext(), "You Clicked: " + listPartidos.get
+            //(recyclerViewGroups.getChildAdapterPosition(view)).getTxtTeamOne(), Toast.LENGTH_SHORT).show();
         }
     };
 
+    private void saveMatch(final MatchBD match) {
+        class SaveMatch extends AsyncTask<Void, Void, Void> {
 
+            @Override
+            protected Void doInBackground(Void... voids) {
+                //adding to database
+                CopaAmericaDatabaseAccesor.getInstance(getContext()).matchDAO().insertMatch(match);
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+            }
+        }
+
+        SaveMatch saveMatch = new SaveMatch();
+        saveMatch.execute();
+    }
 
 }
