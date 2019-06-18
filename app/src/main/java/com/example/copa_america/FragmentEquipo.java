@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 public class FragmentEquipo extends Fragment {
     View view;
     TextView cambio;

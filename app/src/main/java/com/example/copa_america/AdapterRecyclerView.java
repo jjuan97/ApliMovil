@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerView.ViewHolderDatos> {
 
     ArrayList<matches> dataList;
+    private View.OnClickListener listenerForMatches;
     Context context;
 
     public AdapterRecyclerView(ArrayList<matches> dataList, Context context) {
@@ -93,6 +94,12 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
         return dataList.size();
     }
 
+    public void setOnItemClickListener(View.OnClickListener listenerForMatches){
+
+        this.listenerForMatches = listenerForMatches;
+
+    }
+
     //asigancion de la informacion que se mostrara en el RecyclerView
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
 
@@ -114,6 +121,8 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
             txtDate = (TextView) itemView.findViewById(R.id.text_date);
             txtScore = (TextView) itemView.findViewById(R.id.text_score);
             txtGroup = (TextView) itemView.findViewById(R.id.text_group);
+            itemView.setTag(this);
+            itemView.setOnClickListener(listenerForMatches);
         }
     }
 }

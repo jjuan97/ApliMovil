@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener, FragmentEquipos.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener, FragmentEquipos.OnFragmentInteractionListener, FragmentGrupos.OnFragmentInteractionListener{
 
 
     @Override
