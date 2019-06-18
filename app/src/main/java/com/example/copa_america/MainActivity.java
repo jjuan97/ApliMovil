@@ -1,5 +1,6 @@
 package com.example.copa_america;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
@@ -19,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener, FragmentEquipos.OnFragmentInteractionListener{
 
 
     @Override
@@ -154,6 +155,11 @@ public class MainActivity extends AppCompatActivity
             return false;
         }
     };
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 
     @Override
     public void onBackPressed() {

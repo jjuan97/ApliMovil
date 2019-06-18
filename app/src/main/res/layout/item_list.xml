@@ -15,7 +15,6 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="7dp"
         android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true"
         android:focusable="true"
         android:longClickable="true"
         card_view:cardCornerRadius="17dp"
@@ -44,7 +43,6 @@
                     android:layout_marginBottom="10dp"
                     android:contentDescription="@string/conten_description_team1"
                     android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
                     android:focusable="true"
                     android:src="@mipmap/ninguno" />
 
@@ -118,7 +116,6 @@
                     android:contentDescription="@string/conten_description_team2"
                     android:src="@mipmap/ninguno"
                     android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
                     android:focusable="true"/>
 
                 <TextView
