@@ -57,6 +57,8 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
         viewHolderDatos.imgTeamOne.setImageResource(selectImg(dataList.get(i).getTxtTeamOne()));
         viewHolderDatos.imgTeamTwo.setImageResource(selectImg(dataList.get(i).getTxtTeamTwo()));
 
+
+
     }
 
     private int selectImg(String team) {

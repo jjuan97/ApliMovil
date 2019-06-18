@@ -11,9 +11,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -151,27 +153,29 @@ public class FragmentGrupos extends Fragment implements Response.Listener<JSONOb
         @Override
         public void onClick(View view) {
 
-            //FragmentEquipo fragmentSelectedTeam = new FragmentEquipo();
-/*
-            //enviar datos referencia de que equipo se quiere mostrar el fragment
-            RecyclerView.ViewHolder viewHolder = (RecyclerView.ViewHolder) view.getTag();
-            int position = viewHolder.getAdapterPosition();
-            Bundle args = new Bundle();
-            args.putInt("position", position);
-            fragmentSelectedTeam.setArguments(args);
-            //System.out.println(position);
+            PopupMenu popupMenu = new PopupMenu(view.getContext(), view);
+            getActivity().getMenuInflater().inflate(R.menu.menu_ctx_etiqueta, popupMenu.getMenu());
 
-            //transactiones para pasar a el siguiente fragment de descripcion del equipo
-            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragmentSelectedTeam);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();*/
-            System.out.println("aquitoy");
-            Toast.makeText(getContext(), "You Clicked: " + listPartidos.get
-            (recyclerViewGroups.getChildAdapterPosition(view)).getTxtTeamOne(), Toast.LENGTH_SHORT).show();
+            popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    switch (item.getItemId()) {
+                        case R.id.CtxLblOpc1:
+                            System.out.println("aquitoy1");
+                            return true;
+                        case R.id.CtxLblOpc2:
+                            System.out.println("aquitoy2");
+                            return true;
+                        default:
+                            return false;
+                    }
+                }
+            });
+            popupMenu.show();
+            //System.out.println("aquitoy");
+            //Toast.makeText(getContext(), "You Clicked: " + listPartidos.get
+            //(recyclerViewGroups.getChildAdapterPosition(view)).getTxtTeamOne(), Toast.LENGTH_SHORT).show();
         }
     };
-
-
 
 }
