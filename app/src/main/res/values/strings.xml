@@ -52,7 +52,7 @@
     <string name="group_semis">Semifinal</string>
     <string name="group_third">Tercer Lugar</string>
     <string name="group_final">Final</string>
-    <string name="urlWebService">http://192.168.0.42/copaAmerica/</string>
+    <string name="urlWebService">http://192.168.43.238/copaAmerica/</string>
     <!--Strings for table of groups-->
     <string name="group_a">Grupo A</string>
     <string name="group_b">Grupo B</string>
